@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neuroflix Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="splash-container">
+    <div class="glass-card login-card">
+
+      <!-- Logo -->
+      <img src="file_000000003df47243bccb616292ab56b9.png" alt="Neuroflix Logo" class="logo">
+      <h1>Neuroflix</h1>
+
+      <!-- Inputs -->
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+
+      <!-- Button -->
+      <button id="signupBtn">Sign Up</button>
+
+      <!-- Link -->
+      <p>Already have an account? <a href="login.html">Login</a></p>
+
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- JS -->
+  <script src="firebase.js"></script>
+  <script src="auth.js"></script>
+
+  <script>
+    document.getElementById('signupBtn').addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if(!email || !password){
+        return alert('Please enter email and password');
+      }
+
+      signupUser(email, password); // ✅ simplified to just email & password
+    });
+  </script>
+
+</body>
+</html>

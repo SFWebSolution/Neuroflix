@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neuroflix</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Hamburger button for mobile -->
+  <button id="hamburger-btn">☰</button>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <div class="logo-container">
+      <img src="file_000000003df47243bccb616292ab56b9.png" alt="Neuroflix Logo" class="logo">
+    </div>
+    <ul>
+      <li id="nav-home" class="active">Home</li>
+      <li id="nav-search">Search</li>
+      <li id="nav-categories">Categories</li>
+      <li id="nav-profile">Profile</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Video Player Overlay -->
+    <div id="player-overlay">
+      <button id="close-player">✖</button>
+      <div id="player-container"></div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home-section" class="section active">
+      <h1 id="welcome-message">Hello Guest</h1>
+      <h2>Comedy</h2>
+      <div id="comedy-videos" class="videos-grid"></div>
+
+      <h2>Movies</h2>
+      <div id="movies-videos" class="videos-grid"></div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search-section" class="section">
+      <h1>Search Videos</h1>
+      <div class="search-row">
+        <input type="text" id="search-query" placeholder="Type movie or comedy name">
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="search-results" class="videos-grid"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories-section" class="section">
+      <h1>Categories</h1>
+      <div class="category-row">
+        <button class="category-btn" data-query="nigeria comedy skits">Comedy</button>
+        <button class="category-btn" data-query="latest movies">Movies</button>
+      </div>
+      <div id="category-results" class="videos-grid"></div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile-section" class="section">
+      <h1>Profile</h1>
+      <label for="username-input">Username:</label>
+      <input type="text" id="username-input" placeholder="Enter username">
+      <button id="save-username-btn">Save</button>
+      <p>Current username: <span id="profile-name">Guest</span></p>
+      <button id="logout-btn">Logout</button>
+    </section>
+
+  </div>
+
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
+

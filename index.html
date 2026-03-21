@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neuroflix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="splash-container">
+    <div class="glass-card">
+      <img src="file_000000003df47243bccb616292ab56b9.png" alt="Melodix Logo" class="logo">
+      <h1>Melodix</h1>
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script src="firebase.js"></script>
+  <script src="auth.js"></script>
+
+  <script>
+    
+
+    // Splash delay (premium feel)
+    setTimeout(() => {
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          // Admin check
+          if (user.email === "neuro_stack@outlook.com") {
+            window.location.href = "admin.html";
+          } else {
+            window.location.href = "dashboard.html";
+          }
+        } else {
+          window.location.href = "login.html";
+        }
+      });
+    }, 3000);
+  </script>
+
+</body>
+</html>
