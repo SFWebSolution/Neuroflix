@@ -68,7 +68,7 @@ document.getElementById('logout-btn').addEventListener('click', () => {
 // ===== YOUTUBE PLAYER =====
 let ytPlayer;
 let ytReady = false;
-const YOUTUBE_API_KEY = 'AIzaSyAKeZA-PWIoQeUJO15UCCz0nR3_gB-RrLo'; // Replace with your new key
+const YOUTUBE_API_KEY = ''; // Replace with your new key
 
 window.onYouTubeIframeAPIReady = function () {
   ytPlayer = new YT.Player('player-container', {
